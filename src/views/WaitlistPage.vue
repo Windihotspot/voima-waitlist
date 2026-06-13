@@ -97,7 +97,7 @@
 
             <!-- Contact email -->
             <div class="field-group">
-              <label class="field-label">Work email <span class="required">*</span></label>
+              <label class="field-label">Email <span class="required">*</span></label>
               <v-text-field
                 v-model="form.contact_email"
                 :rules="[rules.required, rules.email]"
@@ -235,6 +235,29 @@
                 auto-grow
                 class="v-field-custom"
               />
+            </div>
+
+            <div class="field-group">
+              <label class="field-label"
+                >Are you willing to pay at least £300 to get Voima CaaS infrastructure?<span
+                  class="required"
+                  >*</span
+                ></label
+              >
+              <v-select
+                v-model="form.nature_of_business"
+                :items="['Yes', 'No']"
+                :rules="[rules.required]"
+                placeholder="Select your choice"
+                variant="outlined"
+                density="comfortable"
+                bg-color="#0F1923"
+                color="#4ADE80"
+                base-color="#2D3F50"
+                hide-details="auto"
+                class="v-field-custom"
+              >
+              </v-select>
             </div>
 
             <!-- Submit -->
@@ -646,7 +669,6 @@ function resetForm() {
   font-weight: 600;
   letter-spacing: 0.04em;
   color: #8899a6;
-  text-transform: uppercase;
 }
 .required {
   color: #4ade80;
